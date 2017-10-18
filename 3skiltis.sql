@@ -15,8 +15,8 @@ SELECT Books.*, Authors.name FROM Books INNER JOIN Authors ON Books.authorId = A
 UPDATE Authors INNER JOIN Books ON Authors.authorId = Books.authorId AND Books.bookId = 11 SET Authors.name = 'John Davis';
 
 -- e) Suskaičiuokite kiek knygų kiekvieno autoriaus yra duomenų bazėje (įtraukdami autorius kurie neturi knygų, bei neįtraukdami šių autorių).
-SELECT name AS Authors, COUNT(bookId) AS Book_COUNT FROM Authors LEFT JOIN Books ON Authors.authorId = Books.authorId GROUP BY Authors.name;
-SELECT name AS Authors, COUNT(bookId) AS Book_COUNT FROM Authors INNER JOIN Books ON Authors.authorId = Books.authorId GROUP BY Authors.name;
+SELECT TRIM(name) AS Authors, COUNT(bookId) AS Book_COUNT FROM Authors LEFT JOIN Books ON Authors.authorId = Books.authorId GROUP BY Authors.name;
+SELECT TRIM(name) AS Authors, COUNT(bookId) AS Book_COUNT FROM Authors INNER JOIN Books ON Authors.authorId = Books.authorId GROUP BY Authors.name;
 
 -- f) Pašalinkite jūsų įrašytus autorius. (pagal ID)
 DELETE FROM Authors WHERE authorId = 8;
