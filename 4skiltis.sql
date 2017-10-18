@@ -28,7 +28,3 @@ SELECT Books.title AS Books, GROUP_CONCAT(Authors.name) AS Authors FROM Books IN
 ALTER TABLE Books ADD UNIQUE (title);
 ALTER TABLE Books CONVERT TO CHARACTER SET latin7;
 INSERT INTO Books (title, year, genreId) VALUES ('Žydi šermukšnis ąsos šešėly', 1994, 4);
-
-
-
-

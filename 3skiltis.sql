@@ -25,10 +25,3 @@ DELETE FROM Authors WHERE authorId = 10;
 
 -- g) Pašalinkite knygas, kurios neturi autorių.
 DELETE Books.* FROM Books LEFT JOIN Authors ON Books.authorId = Authors.authorId WHERE Authors.authorId IS NULL;
-
-
-
-
-
-
-
