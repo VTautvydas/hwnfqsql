@@ -22,7 +22,7 @@ INSERT INTO Genres (name) VALUES ('Manual');
 INSERT INTO Genres (name) VALUES ('History');
 
 -- d) Išrinkite visas knygas su jų autoriais. (autorius, jei jų daugiau nei vienas atskirkite kableliais)
-SELECT Books.title AS Books, GROUP_CONCAT(Authors.name) AS Authors FROM Books INNER JOIN Authors ON Books.bookId = Authors.bookId GROUP BY Books.bookid;
+SELECT Books.title AS Books, GROUP_CONCAT(Authors.name SEPARATOR ', ') AS Authors FROM Books INNER JOIN Authors ON Books.bookId = Authors.bookId GROUP BY Books.bookid;
 
 -- e) Papildykite knygų lentelę, kad galėtumėte išsaugoti originalų knygos pavadinimą. (Pavadinime išsaugokite, lietuviškas raides kaip ą,ė,š ir pan.)
 ALTER TABLE Books ADD UNIQUE (title);
